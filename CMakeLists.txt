@@ -9,9 +9,13 @@ else()
 	add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+find_package( OpenCV REQUIRED)
+
 project(computer_vision_project1)
 
 add_executable(
 	LineDetector
 	main.cpp
 )
+
+target_link_libraries( LineDetector ${OpenCV_LIBS} )
